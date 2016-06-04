@@ -36,6 +36,15 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :authentication => :plain,
+      :address => "smtp.mailgun.org",
+      :port => 587,
+      :domain => "sandbox59adf59aea6e4ea88fca633ce22e62b9.mailgun.org",
+      :user_name => "postmaster@sandbox59adf59aea6e4ea88fca633ce22e62b9.mailgun.org",
+      :password => "95a104a9599290e22a8434f236932a76"
+  }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
